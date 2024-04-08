@@ -1,4 +1,4 @@
-let data = [
+[
     {
         id: 9,
         title : 'FORTUITY TRUCKER',
@@ -26,4 +26,3 @@ let data = [
 
 ]
 
-export default data;

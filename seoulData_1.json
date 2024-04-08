@@ -1,4 +1,4 @@
-let data = [
+[
     {
         id: 6,
         title : 'KOREA DEVIL ADDRESS COACH',
@@ -25,5 +25,3 @@ let data = [
     }
 
 ]
-
-export default data;
