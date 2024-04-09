@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit'
+import { configureStore, createSlice} from '@reduxjs/toolkit'
 import newData from './newData';
 import seoulData from './seoulData'
 
@@ -6,20 +6,27 @@ import seoulData from './seoulData'
 const clothes = createSlice({
     name : 'clothes',
     initialState : newData,
-    reducers : {
-      jacketFilter(state){
-        state.filter(()=>
-           state.category === 'JACKET'
-        )
+    reducers :{
+      changeState(state, action){
+        state.splice(0,12);
+        state = [...action.payload]
       }
     }
 })
-export let { jacketFilter} = clothes.actions;
+
+export let { changeState} = clothes.actions;
 //문단5-seoul
 const seoul = createSlice({
   name : 'seoul',
-  initialState : seoulData
+  initialState : seoulData,
+  reducers : {
+    addArray(state, action){
+      state = [...action.payload]
+    }
+  }
 })
+export let {addArray} = seoul.actions;
+
 //문단6-store
 const store = createSlice({
   name : 'store',

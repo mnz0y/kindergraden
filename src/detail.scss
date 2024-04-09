@@ -1,0 +1,111 @@
+@charset 'utf-8';
+@import 'var.scss';
+
+//상단
+.wrap{
+    margin-top: 100px;
+    @include dFlex();
+    img{
+        display: inline-block;
+        margin: 0 auto;
+    }
+}
+.detailSlide{
+    @include dFlex(50%);
+    img{
+        width: 50%;
+        height: 150px;
+    }
+}
+.imgBox{width: 70%;
+    img{
+        width: 80%;
+        height: 600px;
+    }
+}
+.sideDetail{
+    width: 30%;
+}
+.textDetail{
+    width: 45%;
+    line-height: $size-l;
+    span{font-size: 3.4rem};
+    h2{font : {
+        size :$size-l;
+        family : $eng
+        }
+    }
+    p{
+        &:nth-of-type(3){
+            font-size: $size-m;
+        }
+    }
+    .form-select{
+        font-size: $size-s;
+        margin: 3% 0;
+    }
+    button{
+        font-size: $size-s;
+        padding: 1.5% 0;
+        margin: 1% 0;
+    }
+
+}
+
+//하단
+//탭박스
+#fill-tab-example{
+    margin-top: 7%;
+    button{
+        padding: 18px;
+    }
+}
+.tab-content{
+    margin: 5% 0;
+}
+
+//상세정보
+.detailBg{
+    @include backGround(url('../public/img/detailBg.png'),center);
+    height: 250px;
+    margin-bottom: 10%;
+    padding: 33px;
+    h2{
+        line-height: $slide-title;
+        font: {
+        size :$size-l;
+        family : $eng_sub;
+        weight : bold;
+        }
+    }
+    button{
+        font-size: $size-xs;
+        margin-top: 12px;
+        padding: 8px 20px;
+        span{
+            font-family: $eng_sub;
+        }
+        }
+
+}
+.detailClothes{
+    img{
+        display: block;
+        width: 500px;
+        margin: 2% auto;
+    }
+    h3{
+        font-size: $size-m;
+        margin: 3% 0;
+    }
+}
+.nav-link{
+    color: #333 !important;
+}
+.nav-link:focus, .nav-link:hover, .nav-link:active{
+    color: #333 !important;
+    font-weight: bold;
+}
+
+
+

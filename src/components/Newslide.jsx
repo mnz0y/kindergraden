@@ -1,38 +1,83 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Slider from "react-slick";
-import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-bootstrap';
-import { jacketFilter } from '../store';
+import data from '../newData';
+import {useNavigate} from 'react-router-dom';
 
-const Newslide = () => {
-  const clothes = useSelector(state => state.clothes);
-  let dispatch = useDispatch();
-  let origin = clothes;
- let jacket = ()=>dispatch(jacketFilter());
- console.log(jacket)
+const Newslide = (props) => {
+  const {clothes,setClothes} =props;
+  const [isHover, setIsHover] = useState([false,false,false,false,false,false,false,false,false,false,false,false,false]);
+  let origin = data;
+  const navigate = useNavigate();
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block"}}
+        onClick={onClick}
+      />
+    );
+  }
+  
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block" }}
+        onClick={onClick}
+      />
+    );
+  }
 
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 2
+    slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />
   };
 
   return (
     <div className='contents2'>
       <h2>NEW ARRIVALS</h2>
       <div className="tabBtn">
-        <Button variant="outline-dark" onClick={()=>origin}>ALL</Button>
-        <Button variant="outline-dark" onClick={jacket}>JACKET</Button>
-        <Button variant="outline-dark">TOP</Button>
-        <Button variant="outline-dark">CAP</Button>
+        <Button variant="outline-dark" onClick={()=>{
+          setClothes(origin);
+        }}>ALL</Button>
+        <Button variant="outline-dark" onClick={()=>{
+          let jacket = [...origin].filter(v => v.category ==='JACKET');
+          setClothes(jacket);
+        }} >JACKET</Button>
+        <Button variant="outline-dark" onClick={()=>{
+         let top = [...origin].filter(v => v.category ==='T-shirt');
+          setClothes(top);
+          }}  >TOP</Button>
+        <Button variant="outline-dark" onClick={()=>{
+          let cap = [...origin].filter(v => v.category ==='JERSEY');
+          setClothes(cap);
+        }} >JERSEY</Button>
       </div>
       <div className="slider-container">
         <Slider {...settings}>
           {
             clothes.map((value, i) =>
-              <div key={i} className='newImgBox'>
-                <img src={value.imgUrl} alt="clothes" width={'90%'} />
+              <div key={i} className='newImgBox' onClick={()=>{
+                navigate('/detail/'+value.id)
+              }}>
+                <img 
+                onMouseOver={()=>{
+                  let copy =[...isHover];
+                  copy[i]=true;                        
+                  setIsHover(copy)}} 
+                  onMouseOut={()=>{
+                      let copy =[...isHover];
+                      copy[i]=false; 
+                      setIsHover(copy)}}
+                src={isHover[i]? process.env.PUBLIC_URL + value.imgUrl_5 : process.env.PUBLIC_URL + value.imgUrl_1} alt="clothes" width={'90%'} />
                 <h4>{value.title}</h4>
                 <p>{value.color}</p>
                 <p>{value.price}</p>

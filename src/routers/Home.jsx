@@ -7,8 +7,8 @@ import Seoulcollection from '../components/Seoulcollection'
 import Store from '../components/Store'
 
 
-const Home = () => {
-
+const Home = (props) => {
+  const {clothes,setClothes} =props;
 
   return (
     <>
@@ -16,19 +16,19 @@ const Home = () => {
       <SimpleSlider />
       {/* 문단1 */}
       <Row className="contents1">
-        <Col className="motor">
+        <Col className="motor" id='Motor'>
           <h2>MOTORCYCLE</h2>
         </Col>
-        <Col className="surf">
+        <Col className="surf" id='Surf'>
           <h2>SURF</h2>
         </Col>
       </Row>
       {/* 문단2 */}
       <Container>
-        <Newslide />
+        <Newslide clothes={clothes} setClothes={setClothes} />
       </Container>
       {/* 문단3 */}
-      <Row className="contents3">
+      <Row className="contents3" id='journal'>
         <Col>
           <div className="article1"></div>
           <h2>Bob Moore x Beau Foster</h2>

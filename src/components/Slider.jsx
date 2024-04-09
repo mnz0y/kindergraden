@@ -23,7 +23,7 @@ export default function SimpleSlider() {
                             <h2>{value.title}</h2>
                             <Button variant="outline-light" className="videoBtn" size="lg">바로가기<span></span></Button>
                         </div>
-                        <video src={value.videoUrl} width={'100%'} autoPlay muted loop></video>
+                        <video src={process.env.PUBLIC_URL + value.videoUrl} width={'100%'} autoPlay muted loop></video>
                     </div>
                 )
             }
