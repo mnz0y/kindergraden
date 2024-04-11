@@ -8,7 +8,7 @@ import TabContents from "../components/TabContents";
 const Detail = (props) => {
   const { clothes } = props;
   const { id } = useParams();
-  let selproduct = clothes.find(x=> x.id == id)
+  let selproduct = clothes.find(x=> x.id == id);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
@@ -18,6 +18,14 @@ const Detail = (props) => {
     setNav1(sliderRef1);
     setNav2(sliderRef2);
   }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 2
+  };
   return (
     <>
       <Container className="wrap">
@@ -91,7 +99,23 @@ const Detail = (props) => {
 
       <Container>
         <TabContents selproduct={selproduct}/>
+        
       </Container>
+      <h5 className="togetherTitle">다른 고객이 함께 구매한 상품</h5>
+        <div className="slider-container together">
+        <Slider {...settings}>
+
+          {
+            clothes.map((value,i)=>
+            <div key={i}>
+          <img src={process.env.PUBLIC_URL + value.imgUrl_1} alt="img" />
+          <p>{value.title}</p>
+        </div>
+          )
+          }
+       
+      </Slider>
+    </div>
     </>
   );
 }

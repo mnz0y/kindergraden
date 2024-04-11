@@ -15,8 +15,13 @@ const Header = () => {
   };
 
   useEffect(()=>{
+    //슬라이드 이후 네비 배경색 변경
     window.addEventListener('scroll', updateScroll);
+
+    //홈화면 제외 네비 배경색 변경
     if(location.pathname.indexOf('detail')>0){
+      navBar.current.style.background='black';
+    }else if(location.pathname.indexOf('cart')>0){
       navBar.current.style.background='black';
     }
    

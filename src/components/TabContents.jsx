@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, Tab, Tabs, Button } from 'react-bootstrap';
+import { Table, Tab, Tabs, Button, ListGroup, Badge, Row, Col } from 'react-bootstrap';
 import Accordion from 'react-bootstrap/Accordion';
 
 
@@ -27,7 +27,7 @@ const TabContents = (props) => {
             <img src={selproduct.imgUrl_4} alt="img" />
             <img src={selproduct.imgUrl_5} alt="img" />
             <h3>상품정보 보기</h3>
-            <Table responsive="sm" bordered striped variant="light">
+            <Table responsive="sm" bordered striped variant="light" className='info'>
               <thead>
                 <tr>
                   <th>제품소개</th>
@@ -74,7 +74,7 @@ const TabContents = (props) => {
               </tbody>
             </Table>
             <h3>사이즈정보</h3>
-            <Table bordered striped variant="light">
+            <Table bordered striped variant="light" className='size'>
               <thead>
                 <tr>
                   <th>사이즈명(cm)</th>
@@ -117,10 +117,83 @@ const TabContents = (props) => {
             </Table>
           </div>
         </Tab>
-        <Tab eventKey="상품리뷰" title="상품리뷰">
 
+        <Tab eventKey="상품리뷰" title="상품리뷰(5)" className='reviewPage'>
+          <h2>사진리뷰</h2>
+          <Row xs={3} sm={6}>
+            <Col><img src="/img/review1.jpg" alt="리뷰이미지" /></Col>
+            <Col><img src="/img/review2.jpg" alt="리뷰이미지" /></Col>
+            <Col><img src="/img/review3.jpg" alt="리뷰이미지" /></Col>
+            <Col><img src="/img/review4.jpg" alt="리뷰이미지" /></Col>
+            <Col><img src="/img/review5.jpg" alt="리뷰이미지" /></Col>
+            <Col><img src="/img/review6.jpg" alt="리뷰이미지" /></Col>
+          </Row>
+          <h2>리뷰(5)</h2>
+          <ListGroup as="ul" >
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+            >
+              <div className="ms-2 me-auto">
+                <div><span className="star fw-bold">★★★★★</span> <small> | jan**** | 2024-04-11</small></div>
+                <span className='reviewpd'>구매제품 : {selproduct.kor}</span>
+                <p>아주 데일리하게 입기 좋습니다. 핏도 좋고 어디든 잘 어울려요.</p>
+              </div>
+              <Badge bg="primary" pill>
+                new
+              </Badge>
+            </ListGroup.Item>
+
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+            >
+              <div className="ms-2 me-auto">
+                <div><span className="star fw-bold">★★★★★</span> <small> | k7u**** | 2024-04-11</small></div>
+                <span className='reviewpd'>구매제품 : {selproduct.kor}</span>
+                <p>너무 맘에듭니다~~~데우스 좋아하는 브랜드라 다른 디자인 색상도 다 사고싶네요~~ㅎ
+평소에 추리닝에 입어도 잘 어울려요!!</p>
+              </div>
+              <Badge bg="primary" pill>
+                new
+              </Badge>
+            </ListGroup.Item>
+            
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+            >
+              <div className="ms-2 me-auto">
+                <div><span className="star fw-bold">★★★☆☆</span> <small> | man**** | 2024-04-06</small></div>
+                <span className='reviewpd'>구매제품 : {selproduct.kor}</span>
+                <p>생각보다 탄탄하고 사이즈도 커서 좋았어요 단독으로 입기도 좋고 레이어드해서 입기에 길이감이 길어서 좋았어요. 로고도 딱 흑백이 아니라 은은해서 만족했어요!</p>
+              </div>
+            </ListGroup.Item>
+
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+            >
+              <div className="ms-2 me-auto">
+                <div><span className="star fw-bold">★★★★☆</span> <small> | jdh**** | 2024-04-03</small></div>
+                <span className='reviewpd'>구매제품 : {selproduct.kor}</span>
+                <p>생각보다 딱 맞는 핏이어서 좋았어요. 진짜 아주 살짝 루즈핏이거나 레귤러로 봐야 맞겠습니다. 색깔은 진짜 예뻐요</p>
+              </div>
+            </ListGroup.Item>
+            <ListGroup.Item
+              as="li"
+              className="d-flex justify-content-between align-items-start"
+            >
+              <div className="ms-2 me-auto reviewBox">
+                <div><span className="star fw-bold">★★★★★</span> <small> | jjh**** | 2024-04-01</small></div>
+                <span className='reviewpd'>구매제품 : {selproduct.kor}</span>
+                <p>할인해서 정말 저렴히 구매 했습니다. 감사합니다.배송도 빠르고 좋았습니다.</p>
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
         </Tab>
-        <Tab eventKey="배송" title="배송/교환/반품">
+
+        <Tab eventKey="배송" title="배송/교환/반품" className='shipping'>
           <Accordion defaultActiveKey={['0']} alwaysOpen>
             <Accordion.Item eventKey="0">
               <Accordion.Header>배송안내</Accordion.Header>

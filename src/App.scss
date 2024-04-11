@@ -10,11 +10,17 @@ body {
   font-size: $size-s;
 }
 .App{overflow: hidden;}
+
+//네비
 .navbar{padding: 0 30px;}
 .navbar .navbar-nav a {
     color: white !important;
     margin: 0 2%;
     
+  }
+  .navbar-toggler-icon{
+    width: 6.5rem;
+    height: 6.5rem;
   }
 
 

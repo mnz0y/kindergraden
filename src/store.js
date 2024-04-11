@@ -1,31 +1,5 @@
 import { configureStore, createSlice} from '@reduxjs/toolkit'
-import newData from './newData';
-import seoulData from './seoulData'
 
-//문단1-new arrivals
-const clothes = createSlice({
-    name : 'clothes',
-    initialState : newData,
-    reducers :{
-      changeState(state, action){
-        state.splice(0,12);
-        state = [...action.payload]
-      }
-    }
-})
-
-export let { changeState} = clothes.actions;
-//문단5-seoul
-const seoul = createSlice({
-  name : 'seoul',
-  initialState : seoulData,
-  reducers : {
-    addArray(state, action){
-      state = [...action.payload]
-    }
-  }
-})
-export let {addArray} = seoul.actions;
 
 //문단6-store
 const store = createSlice({
@@ -36,10 +10,9 @@ const store = createSlice({
     {imgUrl : '/img/store3.png', name : '서울 성동 성수', address : '서울 성동구 연무장3길 21 1층 102호', time:'월요일 - 일요일 / 오후 12시 - 오후 9시', lastOrder : '오후 8시(주방), 오후 8시 30분(카페)', tel : '02-468-0889'}
   ]
 })
+
 export default configureStore({
   reducer: {
-    clothes : clothes.reducer,
-    seoul : seoul.reducer,
     store : store.reducer,
   }
 })

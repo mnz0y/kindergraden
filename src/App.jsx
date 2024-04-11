@@ -10,6 +10,7 @@ import Home from './routers/Home';
 import Footer from './components/Footer';
 import Detail from './routers/Detail';
 import data from './newData';
+import Cart from './routers/Cart';
 
 function App() {
   const [clothes, setClothes] = useState(data);
@@ -23,6 +24,9 @@ function App() {
 
       {/* detail */}
       <Route path='/detail/:id' element={<Detail clothes={clothes} />} />
+
+      {/* cart */}
+      <Route path='/cart' element={<Cart />} />
 
      </Routes>
       <Footer></Footer>

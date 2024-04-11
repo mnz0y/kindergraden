@@ -92,13 +92,15 @@
     img{
         display: block;
         width: 500px;
-        margin: 2% auto;
+        margin: 5% auto;
     }
     h3{
         font-size: $size-m;
         margin: 3% 0;
     }
 }
+
+//탭메뉴
 .nav-link{
     color: #333 !important;
 }
@@ -107,5 +109,118 @@
     font-weight: bold;
 }
 
+//상품정보보기
+.info{
+    th{
+        padding: 8px;
+        width: 23%;
+        text-align: center;
+    }
+    td{padding: 8px 20px;}
+}
+.size{
+    tr{text-align: center;}
+    th{
+        width: 20%;
+        padding: 8px;
+    }
+    td{padding: 8px;}
+}
 
+//상품리뷰
+.reviewPage{
+    h2{ 
+        margin: 2% 0;
+        border-bottom: 2px solid #333;
+        padding: 1% 0;
+        font : {
+            size: $size-m;
+            weight: 600;
+            }
+     }
+     img{width: 100%;}
+     li{padding: 1.5%; line-height: $size-l;}
+     small{margin: 0 1%; letter-spacing: 0.4rem;}
+     
+}
+.reviewpd{
+        color: #999;
+        font-size: 3.5rem;
+ }
+
+//배송교환반품
+.shipping{
+    button{font-size: 5rem; background: #ddd !important; padding: 1.5% 2%;}
+    
+    .accordion-body{
+        padding: 2%;
+        h3, dt{
+            line-height: $main-title;
+            font : {
+            size: $size-s;
+            weight: 600;
+            }
+        }
+        p, dd{line-height: $size-l;font-size: 3.5rem;}
+
+    }
+
+}
+.accordion-button::after{
+    width: 25px;
+    height: 20px;
+    background-size: cover;
+}
+
+//함께 구매한 상품
+
+.togetherTitle{
+    padding: 5% 6.5% 0;
+    font : {
+        size: $size-m;
+        weight: 600;
+        }
+}
+.together{
+    margin: 5% 0 10%;
+    text-align: center;
+    .slick-slider{overflow: unset;}
+    .slick-dots{bottom: -50px !important;}
+    img{width: 50%; display: inline-block; margin: 0 auto;}
+    p{line-height: $main-title;font-family: $eng; color: #777;}
+}
+
+//카트
+.cart{
+    margin-top: 100px;
+    h2{
+       // @include backGround(url('../public/img/cartbg.png'),center);
+        height: 200px;
+        font-size: $size-l;
+        line-height: 200px;
+        text-align: center;
+    }
+
+    button {
+
+        display: block;
+        margin: 0 auto;
+        font-size: $size-s;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    .table{
+        text-align: center;
+        td{width: 30%;}
+        tbody{vertical-align: middle;}}
+
+}
+.leftSide{
+    width: 70%;
+}
+.rightSide{
+    width: 25%;
+   
+    
+}
 
