@@ -1,24 +1,33 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Button, Form, Stack, Tab, Tabs } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Container, Button, Form, Stack } from 'react-bootstrap';
+import { useParams, useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import TabContents from "../components/TabContents";
-
+import {useDispatch} from 'react-redux';
+import { addItem } from "../store";
 
 const Detail = (props) => {
   const { clothes } = props;
   const { id } = useParams();
   let selproduct = clothes.find(x=> x.id == id);
+  
+  //장바구니보내기
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const moveCart =()=>{
+    dispatch(addItem(
+      {id :selproduct.id, imgUrl:selproduct.imgUrl_1, title : selproduct.title, color : selproduct.color, price : selproduct.price, amount : 1}));
+  navigate('/cart');
+  }
+//슬릭슬라이더
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
-
   useEffect(() => {
     setNav1(sliderRef1);
     setNav2(sliderRef2);
   }, []);
-
   const settings = {
     dots: true,
     infinite: true,
@@ -91,7 +100,7 @@ const Detail = (props) => {
 
           <Stack gap={3} className="col-md-12 mx-auto">
             <Button variant="dark">구매하기</Button>
-            <Button variant="outline-dark">장바구니 담기</Button>
+            <Button variant="outline-dark" onClick={moveCart}>장바구니 담기</Button>
           </Stack>
 
         </div>

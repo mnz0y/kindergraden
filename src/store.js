@@ -1,5 +1,24 @@
 import { configureStore, createSlice} from '@reduxjs/toolkit'
 
+//카트
+const cart = createSlice({
+  name : 'cart',
+  initialState : [],
+  reducers : {
+    addItem(state, action){
+      state.push(action.payload)
+    },
+    removeItem(state,action){
+      let idx = state.findIndex((a)=>{return a.id ===action.payload})
+      state.splice(idx,1);
+    },
+    increse(state,action){
+      let idx = state.findIndex((a)=>{return a.id ===action.payload})
+      ++state[idx].amount;
+    }
+  }
+})
+export let { addItem, removeItem, increse } = cart.actions;
 
 //문단6-store
 const store = createSlice({
@@ -14,5 +33,6 @@ const store = createSlice({
 export default configureStore({
   reducer: {
     store : store.reducer,
+    cart : cart.reducer,
   }
 })

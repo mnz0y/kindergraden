@@ -2,49 +2,67 @@
 @import 'var.scss';
 
 //상단
-.wrap{
+.wrap {
     margin-top: 100px;
     @include dFlex();
-    img{
+
+    img {
         display: inline-block;
         margin: 0 auto;
     }
 }
-.detailSlide{
+
+.detailSlide {
     @include dFlex(50%);
-    img{
+
+    img {
         width: 50%;
         height: 150px;
     }
 }
-.imgBox{width: 70%;
-    img{
+
+.imgBox {
+    width: 70%;
+
+    img {
         width: 80%;
         height: 600px;
     }
 }
-.sideDetail{
+
+.sideDetail {
     width: 30%;
 }
-.textDetail{
+
+.textDetail {
     width: 45%;
     line-height: $size-l;
-    span{font-size: 3.4rem};
-    h2{font : {
-        size :$size-l;
-        family : $eng
+
+    span {
+        font-size: 3.4rem
+    }
+
+    ;
+
+    h2 {
+        font : {
+            size: $size-l;
+            family: $eng
         }
     }
-    p{
-        &:nth-of-type(3){
+
+    p {
+        &:nth-of-type(3) {
             font-size: $size-m;
         }
     }
-    .form-select{
+
+    .form-select {
         font-size: $size-s;
         margin: 3% 0;
     }
-    button{
+
+    button {
         font-size: $size-s;
         padding: 1.5% 0;
         margin: 1% 0;
@@ -54,119 +72,166 @@
 
 //하단
 //탭박스
-#fill-tab-example{
+#fill-tab-example {
     margin-top: 7%;
-    button{
+
+    button {
         padding: 18px;
     }
 }
-.tab-content{
+
+.tab-content {
     margin: 5% 0;
 }
 
 //상세정보
-.detailBg{
-    @include backGround(url('../public/img/detailBg.png'),center);
+.detailBg {
+    @include backGround(url('../public/img/detailBg.png'), center);
     height: 250px;
     margin-bottom: 10%;
     padding: 33px;
-    h2{
+
+    h2 {
         line-height: $slide-title;
+
         font: {
-        size :$size-l;
-        family : $eng_sub;
-        weight : bold;
+            size: $size-l;
+            family: $eng_sub;
+            weight: bold;
         }
     }
-    button{
+
+    button {
         font-size: $size-xs;
         margin-top: 12px;
         padding: 8px 20px;
-        span{
+
+        span {
             font-family: $eng_sub;
         }
-        }
+    }
 
 }
-.detailClothes{
-    img{
+
+.detailClothes {
+    img {
         display: block;
         width: 500px;
         margin: 5% auto;
     }
-    h3{
+
+    h3 {
         font-size: $size-m;
         margin: 3% 0;
     }
 }
 
 //탭메뉴
-.nav-link{
+.nav-link {
     color: #333 !important;
 }
-.nav-link:focus, .nav-link:hover, .nav-link:active{
+
+.nav-link:focus,
+.nav-link:hover,
+.nav-link:active {
     color: #333 !important;
     font-weight: bold;
 }
 
 //상품정보보기
-.info{
-    th{
+.info {
+    th {
         padding: 8px;
         width: 23%;
         text-align: center;
     }
-    td{padding: 8px 20px;}
+
+    td {
+        padding: 8px 20px;
+    }
 }
-.size{
-    tr{text-align: center;}
-    th{
+
+.size {
+    tr {
+        text-align: center;
+    }
+
+    th {
         width: 20%;
         padding: 8px;
     }
-    td{padding: 8px;}
+
+    td {
+        padding: 8px;
+    }
 }
 
 //상품리뷰
-.reviewPage{
-    h2{ 
+.reviewPage {
+    h2 {
         margin: 2% 0;
         border-bottom: 2px solid #333;
         padding: 1% 0;
+
         font : {
             size: $size-m;
             weight: 600;
-            }
-     }
-     img{width: 100%;}
-     li{padding: 1.5%; line-height: $size-l;}
-     small{margin: 0 1%; letter-spacing: 0.4rem;}
-     
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+
+    li {
+        padding: 1.5%;
+        line-height: $size-l;
+    }
+
+    small {
+        margin: 0 1%;
+        letter-spacing: 0.4rem;
+    }
+
 }
-.reviewpd{
-        color: #999;
-        font-size: 3.5rem;
- }
+
+.reviewpd {
+    color: #999;
+    font-size: 3.5rem;
+}
 
 //배송교환반품
-.shipping{
-    button{font-size: 5rem; background: #ddd !important; padding: 1.5% 2%;}
-    
-    .accordion-body{
+.shipping {
+    button {
+        font-size: 5rem;
+        background: #ddd !important;
+        padding: 1.5% 2%;
+    }
+
+    .accordion-body {
         padding: 2%;
-        h3, dt{
+
+        h3,
+        dt {
             line-height: $main-title;
+
             font : {
-            size: $size-s;
-            weight: 600;
+                size: $size-s;
+                weight: 600;
             }
         }
-        p, dd{line-height: $size-l;font-size: 3.5rem;}
+
+        p,
+        dd {
+            line-height: $size-l;
+            font-size: 3.5rem;
+        }
 
     }
 
 }
-.accordion-button::after{
+
+.accordion-button::after {
     width: 25px;
     height: 20px;
     background-size: cover;
@@ -174,53 +239,107 @@
 
 //함께 구매한 상품
 
-.togetherTitle{
+.togetherTitle {
     padding: 5% 6.5% 0;
+
     font : {
         size: $size-m;
         weight: 600;
-        }
+    }
 }
-.together{
+
+.together {
     margin: 5% 0 10%;
     text-align: center;
-    .slick-slider{overflow: unset;}
-    .slick-dots{bottom: -50px !important;}
-    img{width: 50%; display: inline-block; margin: 0 auto;}
-    p{line-height: $main-title;font-family: $eng; color: #777;}
+
+    .slick-slider {
+        overflow: unset;
+    }
+
+    .slick-dots {
+        bottom: -50px !important;
+    }
+
+    img {
+        width: 50%;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    p {
+        line-height: $main-title;
+        font-family: $eng;
+        color: #777;
+    }
 }
 
 //카트
-.cart{
+.cart {
     margin-top: 100px;
-    h2{
-       // @include backGround(url('../public/img/cartbg.png'),center);
+
+    h2 {
+        // @include backGround(url('../public/img/cartbg.png'),center);
         height: 200px;
         font-size: $size-l;
         line-height: 200px;
         text-align: center;
     }
 
-    button {
-
+    .shopping {
         display: block;
-        margin: 0 auto;
+        margin: 5% auto;
         font-size: $size-s;
         padding: 10px 20px;
         border-radius: 10px;
     }
-    .table{
-        text-align: center;
-        td{width: 30%;}
-        tbody{vertical-align: middle;}}
 
 }
-.leftSide{
-    width: 70%;
+
+.leftSide {
+    width: 75%;
+
+    .table {
+        text-align: center;
+
+        tbody {
+            vertical-align: middle;
+
+            td {
+                padding: 3% 0;
+
+                &:nth-of-type(3) {
+                    button {
+                        display: block;
+                        margin: 0 auto;
+                        font-size: $size-s;
+                        padding:  5% 10%;
+                        border-radius: 10px;
+                    }
+                }
+
+            }
+            .input-group{width: 42%; margin: 0 auto;
+            text-align: center;}
+            .form-control{
+                font-size: $size-s;
+                text-align: center;
+            } 
+
+        }
+    }
 }
-.rightSide{
-    width: 25%;
-   
+
+.rightSide {
+    width: 300px;
+    margin:  0 auto;
     
+    th,td{padding: 5rem;}
+    button {
+        font-size: $size-s;
+        padding:  2%;
+        border-radius: 10px;
+        margin: 5% 0;
+    }
 }
+
 
