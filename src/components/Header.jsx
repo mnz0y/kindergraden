@@ -44,7 +44,7 @@ const Header = () => {
         <Nav>
           <Nav.Link href="#myPage"><img src="/img/person.png" alt="마이페이지" width={'25px'} height={'25px'} /></Nav.Link>
           <Nav.Link eventKey={2} onClick={()=>{navigate('/cart')}}>
-          <img src="/img/cart.png" alt="장바구니" width={'25px'} height={'25px'} style={{margin:'0 10px'}}/>
+          <img src="/img/cart.png" alt="장바구니" width={'25px'} height={'25px'}/>
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

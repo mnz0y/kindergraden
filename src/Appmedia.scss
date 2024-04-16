@@ -1,77 +1,36 @@
 @charset 'utf-8';
 @import '_var.scss';
 
-html {
-  font-size: 4px;
 
-  @include small {
-    font-size: 2.5px;
+@include mobile{
+  html {
+    font-size: 2px;
+    
   }
-
-  @include mobile {
-    font-size: 3px;
-  }
-
-  @include tablet {
-    font-size: 3.5px;
-  }
-
-  word-break: keep-all;
 }
 
 body {
   font-size: $size-s;
 }
-
-.App {
-  overflow: hidden;
-}
+.App{overflow: hidden;}
 
 //네비
-.navbar {
-  padding: 0 30px;
-
-  @include small {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  @include mobile {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-  @include tablet {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
-}
-
+.navbar{padding: 0 30px;}
 .navbar .navbar-nav a {
-  color: white !important;
-  margin: 0 2%;
-}
-
-.navbar-nav>.nav-link {
-  margin: 0 10px !important;
-}
-
-.navbar-toggler {
-  background: #fff;
-}
-
-.navbar-toggler-icon {
-  width: 6.5rem;
-  height: 6.5rem;
-}
+    color: white !important;
+    margin: 0 2%;
+    
+  }
+  .navbar-toggler{background: #fff;}
+  .navbar-toggler-icon{
+    width: 6.5rem;
+    height: 6.5rem;
+  }
 
 
 //네비 액티브클래스
-.navBg {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.navBgg {
-  background-color: null
-}
+.navBg{ background-color: rgba(0, 0, 0, 0.8);}
+.navBgg{ background-color:null}
 
 //슬라이드
 .slick-slider {
@@ -79,24 +38,12 @@ body {
 }
 
 .slick-dots {
-  bottom: $size-m !important;
+  bottom: 25px !important;
 }
 
 .slideVideo {
   position: relative;
   width: 100%;
-
-  @include small {
-    margin-top: 72px;
-  }
-
-  @include mobile {
-    margin-top: 73px;
-  }
-
-  @include tablet {
-    margin-top: 73px;
-  }
 
   .textWrap {
     position: absolute;
@@ -114,18 +61,6 @@ body {
         weight: bold
       }
 
-      @include small {
-        font-size: 7rem;
-      }
-
-      @include mobile {
-        font-size: 10rem;
-      }
-
-      @include tablet {
-        font-size: 15rem;
-      }
-
       letter-spacing: $size-xs;
       margin-bottom: 30px;
     }
@@ -137,7 +72,10 @@ body {
       font: {
         size: $size-m;
         weight: bold;
-      };
+      }
+
+      ;
+
     }
   }
 
@@ -145,6 +83,7 @@ body {
 
 //문단1
 .contents1 {
+  margin: 10% 0;
   @include dFlex();
   height: auto;
 
@@ -153,18 +92,6 @@ body {
     opacity: 0.7;
     transition: all 0.5s;
     cursor: pointer;
-
-    @include small {
-      height: 400px;
-    }
-
-    @include mobile {
-      height: 500px;
-    }
-
-    @include tablet {
-      height: 600px;
-    }
 
     &:hover {
       opacity: 1;
@@ -181,62 +108,38 @@ body {
       padding-left: 40px;
       margin-top: 700px;
       text-shadow: 0 0 5px #333;
-
-      @include small {
-        margin-top: 300px;
-      }
-
-      @include mobile {
-        margin-top: 400px;
-      }
-
-      @include tablet {
-        margin-top: 500px;
-      }
     }
   }
 
   .motor {
     @include backGround(url('../public/img/contents2.jpg'), center);
+    margin-right: 1%;
   }
 
   .surf {
     @include backGround(url('../public/img/contents3.jpg'), center);
+    margin-left: 1%;
   }
 }
 
 //문단2-NEW
 .contents2 {
   margin: 5% 0;
-  .slider-container{padding: 10px;}
 
   h2 {
     text-align: center;
     margin: 3% 0;
-
     font: {
       size: $main-title;
       family: $eng;
     }
-
     ;
   }
-
-  .slick-slider {
-    overflow: unset;
-  }
-
-  .slick-prev {
-    left: 0;
-    z-index: 100;
-  }
-
-  .slick-next {
-    right: 0;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
+  .slick-slider{overflow: unset;}
+ .slick-prev{
+  left: -60px;
+}
+  .slick-prev:before, .slick-next:before{
     color: black;
     font-size: $size-l;
   }
@@ -245,28 +148,33 @@ body {
   .tabBtn {
     text-align: center;
     margin: 3% 0;
-
     button {
       width: 15%;
       height: 40px;
       line-height: 40px;
-      margin: 1%;
 
       font: {
         size: $size-s;
         family: $eng_sub;
-      };
+      }
+
+      ;
+      margin: 1%;
     }
   }
 
   .newImgBox {
-    margin: 5%;
+    width: 95%;
+    padding: 5%;
+    margin: 5% 0;
 
     h4 {
       font: {
         size: $size-s;
         family: $eng;
-      };
+      }
+
+      ;
       margin: 2% 0;
     }
 
@@ -289,7 +197,6 @@ body {
 
   .article1 {
     @include backGround(url('../public/img/article1.jpg'));
-    background-position-x: center;
     width: 100%;
     height: 550px;
     margin-bottom: 40px;
@@ -309,17 +216,18 @@ body {
   .bobText {
     padding: 0 2%;
     @include dFlex(100%);
-    p{margin: 2% 0 4%;}
-
-    .bobImg {
-      width: 100rem;
+    .bobImg{
+      width: 400px;
       img {
-        width: 35rem;
-        height: 40rem;
-        margin: 0 3%;
-      }
+      width: 160px;
+      height: 190px;
+      margin: 0 3%;
     }
+    }
+
+    
   }
+
 }
 
 .contents4 {
@@ -331,6 +239,7 @@ body {
     &:nth-of-type(2) {
       padding: 2% !important;
     }
+
   }
 
   h2 {
@@ -372,19 +281,18 @@ body {
   font: {
     size: 8rem;
     family: $eng;
-  };
-}
+  }
 
-.seoulProduct {
-  img {
+  ;
+}
+.seoulProduct{
+  img{
     display: block;
     margin: 0 auto;
   }
-
-  .seoulText {
+  .seoulText{
     width: 70%;
     margin: 5% auto;
-
     h4 {
       font: {
         size: $size-s;
@@ -402,8 +310,7 @@ body {
     }
   }
 }
-
-.seoulBtn {
+.seoulBtn{
   width: 150px;
   font-size: $size-s;
   line-height: $size-l;
@@ -411,92 +318,69 @@ body {
   margin: 5% auto;
 }
 
-.contents6 {
+.contents6{
   margin-bottom: 10%;
-
-  .store {
-    padding: 0 1%;
-  }
-
-  h4 {
+  .store{padding: 0 1%;}
+  h4{
     font-size: 3.5rem;
     margin: 3% 0;
   }
-
-  p {
-    font-size: 3.2rem;
-    margin: 2% 0;
-  }
-
+  p{font-size: 3.2rem;
+  margin: 2% 0;}
+  
 }
-
-.storeTitle {
+.storeTitle{
   margin: 5% 0;
-
   font : {
     size: $size-l;
     family: $eng_sub;
     weight: bold;
   }
-
   text-align: center;
 }
 
 //풋터
-.footer {
+.footer{
   background-color: #333;
   color: #ccc;
   font-size: 3.3rem;
   height: 300px;
-
-  .row {
+  .container{
     @include dFlex();
     height: 300px;
-
-    dd {
+    dd{
       margin: 2% 0;
     }
   }
-
-  .leftBox {
-    p {
-      padding-top: 20px
-    }
+  .leftBox{
+    p{padding-top: 20px}
   }
-
-  .rightBox {
-    @include dFlex(50%, flex-start, flex-end);
-
-    dd {
-      margin: 13% 0;
+ .rightBox{
+  @include dFlex(50%,flex-start,flex-end);
+  dd{margin: 13% 0;}
+  .contact{
+    margin-left: 15%;
+    line-height: 9rem;
+    p{
+      font-size: $size-m;
+      &::after{
+        content: "";
+        @include backGround(url('../public/img/arw.png'));
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+      }
     }
-
-    .contact {
-      margin-left: 15%;
-      line-height: 9rem;
-
-      p {
-        font-size: $size-m;
-
-        &::after {
-          content: "";
-          @include backGround(url('../public/img/arw.png'));
-          width: 18px;
-          height: 18px;
-          display: inline-block;
-        }
-      }
-
-      strong {
-        font-size: $size-s;
-        color: #fff;
-      }
-
-      .sns {
-        img {
-          margin-right: 10%;
-        }
+    strong{
+      font-size: $size-s;
+      color: #fff;
+    }
+    .sns{
+      img{
+        margin-right: 10%;
       }
     }
   }
+ }
 }
+

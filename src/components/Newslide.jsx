@@ -34,11 +34,35 @@ const Newslide = (props) => {
 
   const settings = {
     infinite: false,
+    swipeToSlide:false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
@@ -65,10 +89,10 @@ const Newslide = (props) => {
         <Slider {...settings}>
           {
             clothes.map((value, i) =>
-              <div key={i} className='newImgBox' onClick={()=>{
+              <div key={i} className='newImgBox'>
+                <img onClick={()=>{
                 navigate('/detail/'+value.id)
-              }}>
-                <img 
+              }} 
                 onMouseOver={()=>{
                   let copy =[...isHover];
                   copy[i]=true;                        
@@ -80,7 +104,7 @@ const Newslide = (props) => {
                 src={isHover[i]? process.env.PUBLIC_URL + value.imgUrl_5 : process.env.PUBLIC_URL + value.imgUrl_1} alt="clothes" width={'90%'} />
                 <h4>{value.title}</h4>
                 <p>{value.color}</p>
-                <p>{value.price}</p>
+                <p>{value.price.toLocaleString()}원</p>
               </div>
             )
           }

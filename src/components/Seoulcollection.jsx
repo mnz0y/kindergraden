@@ -12,7 +12,7 @@ const Seoulcollection = () => {
 
         <Container className="contents5" id='Seoul'>
             <h2 className='seoulbg'>DEUS EX MACHINA SEOUL COLLECTION</h2>
-            <Row xs={1} md={3}>
+            <Row xs={1} md={2} lg={3}>
                 {
                     seoul.map((value, i) =>
                         <Col className='seoulProduct' key={i}>
@@ -26,7 +26,7 @@ const Seoulcollection = () => {
                             <div className="seoulText">
                                 <h4>{value.title}</h4>
                                 <p>{value.color}</p>
-                                <p>{value.price}</p>
+                                <p>{value.price.toLocaleString()}원</p>
                             </div>
                         </Col>
                     )

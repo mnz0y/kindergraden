@@ -10,15 +10,27 @@ const cart = createSlice({
     },
     removeItem(state,action){
       let idx = state.findIndex((a)=>{return a.id ===action.payload})
-      state.splice(idx,1);
+      if(window.confirm(`${state[idx].title} 상품을 삭제하시겠습니까?`)){
+        state.splice(idx,1);
+      }
+      
     },
     increse(state,action){
       let idx = state.findIndex((a)=>{return a.id ===action.payload})
-      ++state[idx].amount;
+      state[idx].amount += 1;
+    },
+    decrese(state,action){
+       let idx = state.findIndex((a)=>{return a.id ===action.payload})
+      if(state[idx].amount <= 1){
+         alert('1개이상 구매 가능합니다.')
+         state[idx].amount=1
+      }else{
+       --state[idx].amount;
+      }
     }
   }
 })
-export let { addItem, removeItem, increse } = cart.actions;
+export let { addItem, removeItem, increse, decrese } = cart.actions;
 
 //문단6-store
 const store = createSlice({

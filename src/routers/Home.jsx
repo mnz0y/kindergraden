@@ -1,5 +1,4 @@
 import React from 'react'
-
 import SimpleSlider from '../components/Slider'
 import { Row, Col, Container } from 'react-bootstrap'
 import Newslide from '../components/Newslide'
@@ -15,7 +14,7 @@ const Home = (props) => {
       {/* 슬라이드동영상 */}
       <SimpleSlider />
       {/* 문단1 */}
-      <Row className="contents1">
+      <Row className="contents1" xs={1} md={1} sm={1} lg={2}>
         <Col className="motor" id='Motor'>
           <h2>MOTORCYCLE</h2>
         </Col>
@@ -47,14 +46,14 @@ const Home = (props) => {
       </Row>
 
        {/* 문단4 */}
-      <Row className="contents4">
-        <Col md={6}>
+      <Row className="contents4" >
+        <Col lg={6} md={6} sm={12}>
           <div className="article2"></div>
           <h2>DEUS EX MACHINA x FUEL POMADE COLLABORATION</h2>
           <p>즐거움을 추구하며, 다양한 문화를 선보이는 데우스 엑스 마키나와 퓨얼 포마드가 만나 클래식 헤어를 위한 DEUS x FUEL CUSTOM POMADE와 협업 굿즈를 새롭게 선보입니다. <br/>
             성공적인 협업을 기념하여 FUEL 앰버서더 바버들로 구성된 룩앤런 바버 세미나와 다양한 이벤트를 오는 12월 5일 데우스 홍대 와우산점에서 만나보실 수 있습니다.</p>
         </Col>
-        <Col md={6}>
+        <Col lg={6} md={6} sm={12}>
         <div className="article3"></div>
           <h2>FILM NIGHT AT DEUS NOOSA</h2>
           <p>누사 페스티벌 오브 서핑에서 한 주를 시작하기 위해 매장을 미니 영화관과 공연 공간으로 개조했는데, 

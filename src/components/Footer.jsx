@@ -1,11 +1,12 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 const Footer = () => {
   return (
     <div className='footer'>
         <Container>
-        <div className="leftBox">
+        <Row md={2} sm={1} xs={1} >
+        <Col className="leftBox" >
             <dl>
                 <dt>㈜웍스아웃</dt>
                 <dd>대표이사 강승혁, 박선영 | 사업자등록번호 : 106-86-85373</dd>
@@ -14,8 +15,8 @@ const Footer = () => {
                 <dd>마케팅/제휴 문의 : customer@deuscustoms.co.kr</dd>
             </dl>
                 <p>DEUS EX MACHINA KOREA | ⓒ COPYRIGHT ALL RIGHTS RESERVED</p>
-        </div>
-        <div className="rightBox">
+        </Col>
+        <Col className="rightBox" >
             <dl>
                 <dt>개인정보처리방침</dt>
                 <dd>이용약관</dd>
@@ -33,11 +34,12 @@ const Footer = () => {
                     <img src="/img/insta.svg" alt="인스타그램" />
                 </div>
             </div>
-        </div>
+        </Col>
 
-        </Container>
+         </Row>
+         </Container>
         
-    </div>
+   </div>
   )
 }
 

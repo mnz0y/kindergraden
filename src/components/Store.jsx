@@ -6,7 +6,7 @@ const Store = () => {
     const store = useSelector(state => state.store);
     
   return (
-    <Row className='contents6' xs={1} md={3}>
+    <Row className='contents6' xs={1} md={2} lg={3}>
         {
              store.map((value, i) =>
              <Col className='store' key={i}>

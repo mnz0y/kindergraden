@@ -1,5 +1,5 @@
 @charset 'utf-8';
-@import 'var.scss';
+@import '_var.scss';
 
 //상단
 .wrap {
@@ -300,6 +300,16 @@
 
     .table {
         text-align: center;
+        
+        thead{
+            th{
+                &:nth-child(1){width: 20%;}
+                &:nth-child(2){width: 25%;}
+                &:nth-child(3){width: 30%;}
+                &:nth-child(4){width: 15%;}
+                &:nth-child(5){width: 5%;}
+            }
+        }
 
         tbody {
             vertical-align: middle;
@@ -333,10 +343,12 @@
     width: 300px;
     margin:  0 auto;
     
-    th,td{padding: 5rem;}
+    th,td{padding: 5rem 0;}
+    td{text-align: right;}
+    p{font-size: 3.5rem; padding: 5% 0; }
     button {
         font-size: $size-s;
-        padding:  2%;
+        padding:  3%;
         border-radius: 10px;
         margin: 5% 0;
     }

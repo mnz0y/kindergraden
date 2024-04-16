@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Row, Col, Button, Table, Container, InputGroup, Form, CloseButton } from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { increse, removeItem } from '../store';
+import { increse, removeItem, decrese } from '../store';
 
 const Cart = () => {
     const cart = useSelector((state)=> state.cart);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+   
+    //총주문금액
+    function sum(){
+        let total=0;
+        for(let a=0; a<cart.length; a++){
+            let b= cart[a].price*cart[a].amount;
+            total+=b;
+        }
+        return total;
+    }
+    //배송비
+    const [ship, setShip] =useState(2500);
+    useEffect(()=>{
+        function Shipping(){
+            if(sum()>=50000){
+                setShip(0);
+            }else{setShip(2500)}
+        }
+        Shipping();
+    });
+
+    
+   
     return (
         <>
             <Container className='cart'>
@@ -32,14 +55,14 @@ const Cart = () => {
                                     <td>{value.title}-{value.color}</td>
                                     <td>
                                         <InputGroup className="mb-3">
-                                            <Button variant="outline-dark">-</Button>
+                                            <Button variant="outline-dark" onClick={()=>dispatch(decrese(value.id))}>-</Button>
                                             <Form.Control aria-label="number" value={value.amount}></Form.Control>
-                                            <Button variant="outline-dark" onClick={()=>dispatch(increse())}>+</Button>
+                                            <Button variant="outline-dark" onClick={()=>dispatch(increse(value.id))}>+</Button>
                                         </InputGroup>
                                     </td>
-                                    <td>{(value.price)*(value.amount)}</td>
+                                    <td>{[(value.price)*(value.amount)].toLocaleString()}원</td>
                                     <td><CloseButton aria-label="Close" onClick={()=>{
-                                        dispatch(removeItem());
+                                        dispatch(removeItem(value.id));
                                     }} /></td>
                                 </tr> 
                                     )
@@ -53,21 +76,23 @@ const Cart = () => {
                             <thead>
                                 <tr>
                                     <th>총 주문 금액</th>
-                                    <td>0</td>
+                                    <td>{sum().toLocaleString()}원
+                                    </td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th>배송비</th>
-                                    <td>0</td>
+                                    <td>{(ship).toLocaleString()}원</td>
                                 </tr>
                                 <tr>
                                     <th>총 결제 금액</th>
-                                    <td><b>0</b></td>
+                                    <td><b>{(sum()+ship).toLocaleString()}원</b></td>
                                 </tr>
 
                             </tbody>
                         </Table>
+                        <p>5만원 이상 구매시 무료배송</p>
                         <div className="d-grid">
                             <Button size='lg' variant="outline-dark">구매하기</Button>
                         </div>
