@@ -38,6 +38,7 @@ const Newslide = (props) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 2,
+    centerPadding: "60px",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -101,7 +102,7 @@ const Newslide = (props) => {
                       let copy =[...isHover];
                       copy[i]=false; 
                       setIsHover(copy)}}
-                src={isHover[i]? process.env.PUBLIC_URL + value.imgUrl_5 : process.env.PUBLIC_URL + value.imgUrl_1} alt="clothes" width={'90%'} />
+                src={isHover[i]? process.env.PUBLIC_URL + value.imgUrl_5 : process.env.PUBLIC_URL + value.imgUrl_1} alt="clothes" width={'92%'} />
                 <h4>{value.title}</h4>
                 <p>{value.color}</p>
                 <p>{value.price.toLocaleString()}원</p>

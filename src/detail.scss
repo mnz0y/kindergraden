@@ -14,6 +14,17 @@
 
 .detailSlide {
     @include dFlex(50%);
+    @include small {
+        width: 100%;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+    @include tablet{
+        width: 100%;
+    }
+      
 
     img {
         width: 50%;
@@ -27,6 +38,13 @@
     img {
         width: 80%;
         height: 600px;
+        @include small {
+           height: 400px;
+          }
+        
+          @include mobile {
+            height: 450px;
+          }
     }
 }
 
@@ -37,6 +55,16 @@
 .textDetail {
     width: 45%;
     line-height: $size-l;
+    @include small {
+        width: 100%;
+    }
+    
+    @include mobile {
+        width: 100%;
+    }
+    @include tablet{
+        width: 100%;
+    }
 
     span {
         font-size: 3.4rem
