@@ -19,9 +19,7 @@ const Header = () => {
     window.addEventListener('scroll', updateScroll);
 
     //홈화면 제외 네비 배경색 변경
-    if(location.pathname.indexOf('detail')>0){
-      navBar.current.style.background='black';
-    }else if(location.pathname.indexOf('cart')>0){
+    if(location.pathname.indexOf('detail')>0 ||location.pathname.indexOf('cart')>0||location.pathname.indexOf('login')>0){
       navBar.current.style.background='black';
     }
    
@@ -42,7 +40,7 @@ const Header = () => {
           <Nav.Link href="#journal">저널</Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="#myPage"><img src="/img/person.png" alt="마이페이지" width={'25px'} height={'25px'} /></Nav.Link>
+          <Nav.Link onClick={()=>{navigate('/login')}}><img src="/img/person.png" alt="마이페이지" width={'25px'} height={'25px'} /></Nav.Link>
           <Nav.Link eventKey={2} onClick={()=>{navigate('/cart')}}>
           <img src="/img/cart.png" alt="장바구니" width={'25px'} height={'25px'}/>
           </Nav.Link>

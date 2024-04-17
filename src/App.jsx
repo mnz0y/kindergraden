@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Detail from './routers/Detail';
 import data from './newData';
 import Cart from './routers/Cart';
+import Login from './routers/Login';
 
 function App() {
   const [clothes, setClothes] = useState(data);
@@ -28,8 +29,12 @@ function App() {
       {/* cart */}
       <Route path='/cart' element={<Cart />} />
 
+      {/* login */}
+      <Route path='/login' element={<Login/>}/>
+
      </Routes>
-      <Footer></Footer>
+
+      <Footer />
     </div>
   );
 }

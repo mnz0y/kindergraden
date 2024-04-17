@@ -57,4 +57,10 @@ $slide-title: 20rem;/* 80px */
     }
 }
 
+@mixin cart {
+    @media (max-width :1399px) {
+        @content;
+    }
+}
+
 

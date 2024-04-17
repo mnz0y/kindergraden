@@ -56,7 +56,7 @@ const Cart = () => {
                                     <td>
                                         <InputGroup className="mb-3">
                                             <Button variant="outline-dark" onClick={()=>dispatch(decrese(value.id))}>-</Button>
-                                            <Form.Control aria-label="number" value={value.amount}></Form.Control>
+                                            <Form.Control aria-label="number" value={value.amount} readOnly></Form.Control>
                                             <Button variant="outline-dark" onClick={()=>dispatch(increse(value.id))}>+</Button>
                                         </InputGroup>
                                     </td>

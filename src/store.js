@@ -6,21 +6,26 @@ const cart = createSlice({
   initialState : [],
   reducers : {
     addItem(state, action){
-      state.push(action.payload)
+      let idx = state.findIndex((a)=>{return a.id === action.payload.id})
+      if(idx>=0){
+        ++state[idx].amount
+      }else{
+            state.push(action.payload)
+      }
     },
     removeItem(state,action){
-      let idx = state.findIndex((a)=>{return a.id ===action.payload})
+      let idx = state.findIndex((a)=>{return a.id === action.payload})
       if(window.confirm(`${state[idx].title} 상품을 삭제하시겠습니까?`)){
         state.splice(idx,1);
       }
       
     },
     increse(state,action){
-      let idx = state.findIndex((a)=>{return a.id ===action.payload})
+      let idx = state.findIndex((a)=>{return a.id === action.payload})
       state[idx].amount += 1;
     },
     decrese(state,action){
-       let idx = state.findIndex((a)=>{return a.id ===action.payload})
+       let idx = state.findIndex((a)=>{return a.id === action.payload})
       if(state[idx].amount <= 1){
          alert('1개이상 구매 가능합니다.')
          state[idx].amount=1

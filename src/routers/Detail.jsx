@@ -17,8 +17,7 @@ const Detail = (props) => {
   const moveCart =()=>{
     dispatch(addItem(
       {id :selproduct.id, imgUrl:selproduct.imgUrl_1, title : selproduct.title, color : selproduct.color, price : selproduct.price, amount : 1}));
-  navigate('/cart');
-  }
+      navigate('/cart');}
 //슬릭슬라이더
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);

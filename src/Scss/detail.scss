@@ -463,37 +463,4 @@
     }
 }
 
-//로그인
-.loginPage{
-    margin-top: 200px;
-    width: 450px;
-
-    h1{
-        font : {
-            size: $size-l;
-            weight : bold;
-        }
-        
-        line-height: $slide-title;
-        text-align: center;
-        border-bottom: 1rem solid #333;
-        margin-bottom: 5%;
-    }
-    .form-control{
-        font-size: $size-s;
-        margin: 3% 0;
-        padding: 2%;
-    }
-    button{
-        width: 100%;
-        text-align: center;
-        font-size: $size-s;
-        margin: 2% 0;
-        padding: 2%;
-    }
-    .btn-group{
-        width: 100%;
-        margin-bottom:20%;
-    }
-}
 
