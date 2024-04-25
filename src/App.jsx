@@ -1,40 +1,28 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
-import './detail.scss';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import {Routes, Route} from 'react-router-dom';
-import React ,{ useState } from 'react';
-import Header from './components/Header';
-import Home from './routers/Home';
-import Footer from './components/Footer';
-import Detail from './routers/Detail';
-import data from './newData';
-import Cart from './routers/Cart';
-import Login from './routers/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Navbar, Nav} from 'react-bootstrap'
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Slide from './components/Slide';
+
 
 function App() {
-  const [clothes, setClothes] = useState(data);
   return (
     <div className="App">
-     <Header />
+        <Navbar collapseOnSelect expand="lg" fixed='top'>
+        <Navbar.Brand href="#home"><img src="img/MNZY.png" alt="logo" /></Navbar.Brand>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav>
+            <Nav.Link href="#about">ABOUT</Nav.Link>
+            <Nav.Link eventKey={2} href="#works">WORKS</Nav.Link>
+            <Nav.Link eventKey={3} href="#contact">CONTACT</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+    </Navbar>
 
-     <Routes>
-      {/* home */}
-      <Route path='/' element={<Home clothes={clothes} setClothes={setClothes} />} />
-
-      {/* detail */}
-      <Route path='/detail/:id' element={<Detail clothes={clothes} />} />
-
-      {/* cart */}
-      <Route path='/cart' element={<Cart />} />
-
-      {/* login */}
-      <Route path='/login' element={<Login/>}/>
-
-     </Routes>
-
-      <Footer />
+    <Slide/>
+      
     </div>
   );
 }
