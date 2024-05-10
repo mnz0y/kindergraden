@@ -1,0 +1,66 @@
+@charset 'utf-8';
+@import '_media.scss';
+
+$eng : 'TAEBAEKfont'; /* 영어폰트 */
+$eng_sub : 'GmarketSansMedium'; /* 영어2폰트 */
+$kor : 'SUIT-Regular'; /* 한국폰트 */
+
+// 폰트사이즈
+$size-xs : 3rem; /*12px*/
+$size-s : 4rem; /*16px*/
+$size-m : 6rem; /*24px*/
+$size-l: 10rem; /*40px*/
+
+$main-title: 15rem; /*60px*/
+$slide-title: 20rem;/* 80px */
+
+
+@mixin dFlex($w: 100%, $ai: center, $jc: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    width: $w;
+    align-items: $ai;
+    justify-content: $jc;
+}
+
+@mixin backGround($url, $position: null) {
+    background: {
+        image: $url;
+        position: $position;
+        repeat: no-repeat;
+        size: cover;
+    }
+}
+
+//반응형
+@mixin small {
+    @media (max-width : #{$breakpoint-mobile - 1px}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (min-width : #{$breakpoint-mobile}) and (max-width : #{$breakpoint-tablet - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width : #{$breakpoint-tablet}) and (max-width : #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width : #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+@mixin cart {
+    @media (max-width :1399px) {
+        @content;
+    }
+}
+
+

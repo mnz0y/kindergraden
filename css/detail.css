@@ -1,0 +1,460 @@
+@charset "UTF-8";
+/* 영어폰트 */
+/* 영어2폰트 */
+/* 한국폰트 */
+/*12px*/
+/*16px*/
+/*24px*/
+/*40px*/
+/*60px*/
+/* 80px */
+.wrap {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrap img {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.detailSlide {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 575px) {
+  .detailSlide {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .detailSlide {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .detailSlide {
+    width: 100%;
+  }
+}
+.detailSlide img {
+  width: 50%;
+}
+
+.imgBox {
+  width: 70%;
+}
+.imgBox img {
+  width: 80%;
+  height: 100%;
+}
+
+.sideDetail {
+  width: 30%;
+  align-self: flex-start;
+}
+
+.textDetail {
+  width: 45%;
+  line-height: 10rem;
+}
+@media (max-width: 575px) {
+  .textDetail {
+    width: 87%;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .textDetail {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .textDetail {
+    width: 100%;
+  }
+}
+.textDetail span {
+  font-size: 3.4rem;
+}
+.textDetail h2 {
+  font-size: 10rem;
+  font-family: "TAEBAEKfont";
+}
+.textDetail p:nth-of-type(3) {
+  font-size: 6rem;
+}
+.textDetail .form-select {
+  font-size: 4rem;
+  margin: 3% 0;
+}
+.textDetail button {
+  font-size: 4rem;
+  padding: 1.5% 0;
+  margin: 1% 0;
+}
+
+#fill-tab-example {
+  margin-top: 7%;
+}
+#fill-tab-example button {
+  padding: 18px;
+}
+
+.tab-content {
+  margin: 5% 0;
+}
+@media (max-width: 575px) {
+  .tab-content {
+    padding: 5%;
+  }
+}
+
+.detailBg {
+  background-image: url("../public/img/detailBg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 250px;
+  margin-bottom: 10%;
+  padding: 33px;
+}
+@media (max-width: 575px) {
+  .detailBg {
+    height: auto;
+    background-position: right;
+  }
+}
+.detailBg h2 {
+  line-height: 20rem;
+  font-size: 10rem;
+  font-family: "GmarketSansMedium";
+  font-weight: bold;
+}
+@media (max-width: 575px) {
+  .detailBg h2 {
+    font-size: 8rem;
+  }
+}
+.detailBg button {
+  font-size: 3rem;
+  margin-top: 12px;
+  padding: 8px 20px;
+}
+.detailBg button span {
+  font-family: "GmarketSansMedium";
+}
+
+.detailClothes img {
+  display: block;
+  width: 500px;
+  margin: 5% auto;
+}
+@media (max-width: 575px) {
+  .detailClothes img {
+    width: 100%;
+  }
+}
+.detailClothes h3 {
+  font-size: 6rem;
+  margin: 3% 0;
+}
+
+.nav-link {
+  color: #333 !important;
+}
+
+.nav-link:focus,
+.nav-link:hover,
+.nav-link:active {
+  color: #333 !important;
+  font-weight: bold;
+}
+
+@media (max-width: 575px) {
+  .nav-tabs .nav-item:nth-of-type(1) {
+    padding-left: 5%;
+  }
+  .nav-tabs .nav-item:nth-of-type(3) {
+    padding-right: 5%;
+  }
+}
+
+.info th {
+  padding: 8px;
+  width: 23%;
+  text-align: center;
+}
+.info td {
+  padding: 8px 20px;
+}
+
+.size tr {
+  text-align: center;
+}
+.size th {
+  width: 20%;
+  padding: 8px;
+}
+.size td {
+  padding: 8px;
+}
+
+.reviewPage h2 {
+  margin: 2% 0;
+  border-bottom: 2px solid #333;
+  padding: 1% 0;
+  font-size: 6rem;
+  font-weight: 600;
+}
+.reviewPage img {
+  width: 100%;
+}
+.reviewPage li {
+  padding: 1.5%;
+  line-height: 10rem;
+}
+.reviewPage small {
+  margin: 0 1%;
+  letter-spacing: 0.4rem;
+}
+
+.reviewpd {
+  color: #999;
+  font-size: 3.5rem;
+}
+
+.shipping button {
+  font-size: 5rem;
+  background: #ddd !important;
+  padding: 1.5% 2%;
+}
+.shipping .accordion-body {
+  padding: 2%;
+}
+.shipping .accordion-body h3,
+.shipping .accordion-body dt {
+  line-height: 15rem;
+  font-size: 4rem;
+  font-weight: 600;
+}
+.shipping .accordion-body p,
+.shipping .accordion-body dd {
+  line-height: 10rem;
+  font-size: 3.5rem;
+}
+
+.accordion-button::after {
+  width: 25px;
+  height: 20px;
+  background-size: cover;
+}
+
+.togetherTitle {
+  padding: 5% 6.5% 0;
+  font-size: 6rem;
+  font-weight: 600;
+}
+
+.together {
+  margin: 5% 0 20%;
+  text-align: center;
+}
+.together .slick-slider {
+  overflow: unset;
+}
+.together .slick-dots {
+  bottom: -50px !important;
+}
+.together img {
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+}
+.together p {
+  line-height: 15rem;
+  font-family: "TAEBAEKfont";
+  color: #777;
+}
+
+.cart {
+  margin-top: 100px;
+}
+@media (max-width: 575px) {
+  .cart .row {
+    padding: 2%;
+  }
+}
+.cart h2 {
+  height: 200px;
+  line-height: 200px;
+  font-size: 10rem;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  .cart h2 {
+    height: 100px;
+    line-height: 100px;
+  }
+}
+.cart .shopping {
+  display: block;
+  margin: 5% auto;
+  font-size: 4rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+@media (max-width: 575px) {
+  .cart .shopping {
+    width: 97% !important;
+    margin: 2% auto;
+    padding: 2%;
+  }
+}
+@media (max-width: 1399px) {
+  .cart .shopping {
+    width: 100%;
+  }
+}
+
+.leftSide {
+  width: 75%;
+}
+@media (max-width: 1399px) {
+  .leftSide {
+    width: 100%;
+  }
+}
+.leftSide .table {
+  text-align: center;
+}
+.leftSide .table thead th:nth-child(1) {
+  width: 20%;
+}
+.leftSide .table thead th:nth-child(2) {
+  width: 25%;
+}
+.leftSide .table thead th:nth-child(3) {
+  width: 30%;
+}
+.leftSide .table thead th:nth-child(4) {
+  width: 15%;
+}
+.leftSide .table thead th:nth-child(5) {
+  width: 5%;
+}
+.leftSide .table tbody {
+  vertical-align: middle;
+}
+.leftSide .table tbody td {
+  padding: 3% 0;
+}
+@media (max-width: 575px) {
+  .leftSide .table tbody td img {
+    width: 100px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .leftSide .table tbody td img {
+    width: 120px;
+  }
+}
+.leftSide .table tbody td:nth-of-type(3) button {
+  display: block;
+  margin: 0 auto;
+  font-size: 4rem;
+  padding: 5% 10%;
+  border-radius: 10px;
+}
+.leftSide .table tbody .input-group {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media (max-width: 575px) {
+  .leftSide .table tbody .input-group {
+    width: 70%;
+  }
+}
+.leftSide .table tbody .form-control {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.rightSide {
+  width: 300px;
+  margin: 0 auto;
+}
+@media (max-width: 1399px) {
+  .rightSide {
+    width: 100%;
+  }
+}
+.rightSide th, .rightSide td {
+  padding: 5rem 0;
+}
+.rightSide td {
+  text-align: right;
+}
+.rightSide p {
+  font-size: 3.5rem;
+  padding: 5% 0;
+}
+@media (max-width: 1399px) {
+  .rightSide p {
+    padding: 2% 0;
+  }
+}
+.rightSide button {
+  font-size: 4rem;
+  padding: 3%;
+  border-radius: 10px;
+  margin: 5% 0;
+}
+@media (max-width: 1399px) {
+  .rightSide button {
+    padding: 2%;
+    margin: 0;
+  }
+}
+
+.loginPage {
+  margin-top: 200px;
+  width: 450px;
+}
+@media (max-width: 575px) {
+  .loginPage {
+    width: 90%;
+    margin-top: 120px;
+  }
+}
+.loginPage h1 {
+  font-size: 10rem;
+  font-weight: bold;
+  line-height: 20rem;
+  text-align: center;
+  border-bottom: 1rem solid #333;
+  margin-bottom: 5%;
+}
+.loginPage .form-control {
+  font-size: 4rem;
+  margin: 3% 0;
+  padding: 2%;
+}
+.loginPage button {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  margin: 2% 0;
+  padding: 2%;
+}
+.loginPage .btn-group {
+  width: 100%;
+  margin-bottom: 20%;
+}
